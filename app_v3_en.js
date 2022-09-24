@@ -5510,24 +5510,6 @@ if (UI.theme == "material-dark") {
     <meta name="theme-color" content="#0D0D0D">`
   );
 }
-function validate(frm)
-{
-  var SomeChecked = false;
-  for(var i = 0; i < tracks.length; i++)
-  {
-      if(tracks[i].checked) 
-      {
-          SomeChecked = true;
-          var url= tracks[i].value;    
-          window.open(url,'Download');  
-      }
-  }
-  if(!SomeChecked)
-  {
-      alert("Please select atleast one track");
-  }
-  return false;
-}
 function init() {
   document.siteName = $("title").html();
   $("body").addClass(
@@ -5541,8 +5523,8 @@ function init() {
         UI.disable_navicon == true ? "none" : "block"
       }">
 				<ul class="menu_ul">
-					<li class="menu_li"><a href="t.me/botusername" target="_blank">Bot Link</a></li>
-					<li class="menu_li"><a href="https://github.com/5MayRain/goIndex-theme-nexmoe" target="_blank">Github</a></li>
+					<li class="menu_li"><a href="https://facebook.com/rinka.pantsu.id" target="_blank">Developer</a></li>
+					<li class="menu_li"><a href="https://trakteer.id/hifuminet" target="_blank">Buy Me a Coffe</a></li>
 				</ul>
 				<div class="nav_icon" ></div>
 			</div>
@@ -5822,7 +5804,7 @@ function append_files_to_list(path, files) {
         p += "?a=view";
         c += " view";
       }
-      html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><form method="post" onSubmit="validate(this);"><input type="checkbox" value="${p}" name="track"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
+      html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
@@ -5830,7 +5812,7 @@ function append_files_to_list(path, files) {
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	          <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
 	          </a>
-	      </li><input type="submit" value="Download" ></form>`;
+	      </li>`;
     }
   }
   if (targetFiles.length > 0) {

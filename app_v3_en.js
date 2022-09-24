@@ -5510,6 +5510,24 @@ if (UI.theme == "material-dark") {
     <meta name="theme-color" content="#0D0D0D">`
   );
 }
+function validate(frm)
+{
+  var SomeChecked = false;
+  for(var i = 0; i < tracks.length; i++)
+  {
+      if(tracks[i].checked) 
+      {
+          SomeChecked = true;
+          var url= tracks[i].value;    
+          window.open(url,'Download');  
+      }
+  }
+  if(!SomeChecked)
+  {
+      alert("Please select atleast one track");
+  }
+  return false;
+}
 function init() {
   document.siteName = $("title").html();
   $("body").addClass(
@@ -5519,6 +5537,7 @@ function init() {
 <header class="nexmoe-nav">
 	<div class="navSize">
 			<a href="/"><img class="avatar" src="${UI.avatar}"/></a>
+			<a onclick="validate(frm)" target="_blank">Download Selected</a>
 			<div class="nav_menu"  style="display:${
         UI.disable_navicon == true ? "none" : "block"
       }">

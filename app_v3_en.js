@@ -5955,15 +5955,15 @@ function append_search_result_to_list(files) {
       ) {
         c += " view";
       }
-      html += `<form method="post" onSubmit="validate(this);"><li class="mdui-list-item file mdui-ripple" target="_blank"><a id="${item["id"]}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
-	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}"><input type="checkbox" value="${item.name}" name="tracks">
+      html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a id="${item["id"]}" gd-type="${item.mimeType}" onclick="onSearchResultItemClick(this)" class="${c}">
+	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate" title="${item.name}">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item["modifiedTime"]}</div>
 	          <div class="mdui-col-sm-2 mdui-text-right">${item["size"]}</div>
 	          </a>
-	      </li></form>`;
+	      </li>`;
     }
   }
   $list.html(($list.data("curPageIndex") == "0" ? "" : $list.html()) + html);
